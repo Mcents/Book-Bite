@@ -14,7 +14,7 @@ feature "User logs in and out" do
     fill_in "session[password]", with: user_attributes[:password]
     click_on "Login"
 
-    expect(current_path).to eq(user_path(user))
+    expect(current_path).to eq(root_path)
     expect(page).to have_content("Welcome, #{user.username}")
     expect(page).to have_content("Successful login")
 
