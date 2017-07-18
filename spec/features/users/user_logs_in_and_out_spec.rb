@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "User logs in and out" do
+feature "User logs in and out" do
   scenario "with valid credentials" do
     user_attributes = {
       username: "michaelc",
