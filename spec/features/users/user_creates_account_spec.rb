@@ -14,7 +14,7 @@ feature "User creates an account" do
     fill_in "user[password]", with: user_attributes[:password]
     fill_in "user[first_name]", with: user_attributes[:first_name]
     fill_in "user[last_name]", with: user_attributes[:last_name]
-    click_on "Create Account"
+    click_button "Create Account"
 
     user = User.last
 
