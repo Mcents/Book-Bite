@@ -10,7 +10,6 @@ RSpec.feature "User can create a book" do
     visit "books/new"
     fill_in "book[title]", with: "The Sun Also Rises"
     fill_in "book[author]", with: "Ernest"
-    fill_in "book[jacket]", with: book_jacket
     fill_in "book[isbn]", with: "9729479274"
     select "Education", from: "book_category_id"
     click_button "Create Book"

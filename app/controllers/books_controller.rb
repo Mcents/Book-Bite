@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
 
   def new
+    @book = Book.new
   end
 
   def create
@@ -18,6 +19,21 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+  end
+
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    if @book.update_attributes(book_params)
+      flash[:success] = "You updated #{@book.title}"
+
+      redirect_to @book
+    else
+      render :edit
+    end
   end
 
   private

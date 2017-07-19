@@ -6,6 +6,5 @@ FactoryGirl.define do
     jacket "MyString"
     borrowed false
     description "MyString"
-    user_id 1
   end
 end

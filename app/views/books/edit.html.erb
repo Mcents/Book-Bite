@@ -10,7 +10,5 @@
 
   <%= f.collection_select :category_id, Category.all, :id, :title %>
 
-  <%= f.submit "Create Book" %>
+  <%= f.submit "Update" %>
 <% end %>
-
-<%= link_to "Create Category", new_category_path %>

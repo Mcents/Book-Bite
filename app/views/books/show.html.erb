@@ -2,4 +2,6 @@
   <%= @book.title %>
   <%= @book.author  %>
   <%= @book.isbn %>
-  <%= image_tag @book.jacket %>
+<%= image_tag("http://covers.openlibrary.org/b/isbn/#{@book.isbn}-M.jpg") %>
+
+<h4> <%= link_to "Edit", edit_book_path(@book) %></h4>
