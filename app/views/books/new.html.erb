@@ -11,6 +11,9 @@
   <%= f.label :isbn %>
   <%= f.text_field :isbn %>
 
+  <%= f.collection_select :category_id, Category.all, :id, :title %>
 
   <%= f.submit "Create Book" %>
 <% end %>
+
+<%= link_to "Create Category", new_category_path %>

@@ -4,13 +4,16 @@ RSpec.feature "User can create a book" do
   scenario "when they are logged in" do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    category = Category.create(title: "Education")
     book_jacket = "http://bookcoverarchive.com/wp-content/uploads/amazon/the_stranger.jpg"
 
     visit "books/new"
+    save_and_open_page
     fill_in "book[title]", with: "The Sun Also Rises"
     fill_in "book[author]", with: "Ernest"
     fill_in "book[jacket]", with: book_jacket
     fill_in "book[isbn]", with: "9729479274"
+    select "Education", from: "book_category_id"
     click_button "Create Book"
 
     l_book = Book.last
