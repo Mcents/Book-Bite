@@ -4,19 +4,20 @@ RSpec.feature "User can edit a book" do
   scenario "and it will update" do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-    category = Category.create(title: "Education")
-    book = create(:book, category_id: 1, user_id: 1)
+    category = create(:category)
+    book = Book.create(title: "Not Sick", author: "That one guy", isbn: "748297489724", category_id: category.id, user_id: user.id)
+    updated_title = "Sick"
 
-    visit book_path
-    save_and_open_page
+    visit book_path(book)
     click_on "Edit"
-    fill_in "book[title]", with: book.title
+    fill_in "book[title]", with: updated_title
     fill_in "book[author]", with: book.author
     fill_in "book[isbn]", with: book.isbn
     select "Education", from: "book_category_id"
     click_on "Update"
 
-    expect(page).to have_content(book.title)
-
+    expect(page).to have_content(updated_title)
+    expect(page).to have_content(book.author)
+    expect(page).to_not have_content(book.title)
   end
 end
