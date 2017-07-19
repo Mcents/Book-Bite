@@ -1,3 +1,4 @@
 <% @books.each do |book| %>
 <%= book.title %>
+<%= image_tag("http://covers.openlibrary.org/b/isbn/#{book.isbn}-M.jpg") %>
 <% end %>
