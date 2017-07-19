@@ -8,7 +8,6 @@ RSpec.feature "User can create a book" do
     book_jacket = "http://bookcoverarchive.com/wp-content/uploads/amazon/the_stranger.jpg"
 
     visit "books/new"
-    save_and_open_page
     fill_in "book[title]", with: "The Sun Also Rises"
     fill_in "book[author]", with: "Ernest"
     fill_in "book[jacket]", with: book_jacket
