@@ -1,8 +1,15 @@
 <%= image_tag("http://covers.openlibrary.org/b/isbn/#{@book.isbn}-M.jpg") %>
   <%= @book.title %>
   <%= @book.author  %>
-  <%= @book.isbn %>
+  <%= @book.description %>
   <%= @book.user.first_name %>
+
+<% if @book.borrowed == false %>
+  <%= form_for @book do |t| %>
+     <%= t.hidden_field :borrowed, :value=> true %>
+     <%= t.submit "Borrow Book" %>
+   <% end %>
+<% end %>
 
 <h4> <%= link_to "Edit", edit_book_path(@book) %></h4>
 <h4> <%= link_to "Delete", book_path, method: :delete %></h4>
