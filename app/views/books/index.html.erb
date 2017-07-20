@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="./assets/book-index.css"/>
     <div id="demo"></head>
   <span><h1>Books</h1>
+    <p>
 
 
   <!-- Responsive table starts here -->
@@ -17,6 +18,7 @@
           <th>Jacket</th>
           <th>Title</th>
           <th>Author</th>
+          <th>Category</th>
           <th>Available</th>
         </tr>
       </thead>
@@ -27,6 +29,7 @@
           <td data-title="Title"> <%= book.title %></td>
           <td data-title="Author"> <%= book.author %></a>
           </td>
+          <td data-title="Category"> <%= book.category.title %></td>
           <td data-title="Status"> <%= book.borrowed %></td>
           <% end %>
         </tr>
