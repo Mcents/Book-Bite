@@ -1,3 +1,5 @@
+require 'slack-notify'
+
 class BooksController < ApplicationController
 
   def new
@@ -22,6 +24,14 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
+  def send_to
+    # @user = current_user
+    # notifier = Slack::Notifier.new "https://hooks.slack.com/services/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"
+    # notifier.ping at-kevin.mugele "Someone wants to borrow your book"
+    client = SlackNotify::Client.new(webhook_url: "https://hooks.slack.com/services/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", username: "book-borrow-bot")
+    client.notify("Someone wants to borrow your book", "@kevin.mugele")
+  end
+
   def edit
     @book = Book.find(params[:id])
   end
@@ -30,6 +40,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     if @book.update_attributes(book_params)
       flash[:success] = "You updated #{@book.title}"
+      flash[:notice] = "Contact this person"
 
       redirect_to @book
     else

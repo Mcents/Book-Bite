@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
+  get "books/send_to" => "books#send_to"
+  post "books/send_to" => "books#send_to"
 
   resources :users
   resources :books
