@@ -15,6 +15,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+    @pages = Book.paginate(page: params[:page])
   end
 
   def show

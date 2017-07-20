@@ -1,12 +1,20 @@
 
-<link href="starter-template" rel="stylesheet">
-<div class="ind-book">
-  <% @books.each do |book| %>
-  <ul>
-  <li><%= image_tag("http://covers.openlibrary.org/b/isbn/#{book.isbn}-M.jpg") %></li>
-  <li><%= book.title %></li>
-  <li><%= book.author %></li>
-  <li><%= book.isbn %></li>
-</ul>
-  <% end %>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="starter-template.css"/>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%@books.each do |book|%>
+    <div class="book_holder">
+      <p><a href="/books/<%= book.id %>"><%= image_tag("http://covers.openlibrary.org/b/isbn/#{book.isbn}-M.jpg")  %></a>
+      <h4>Title: </h4><li><%= book.title %></li>
+      <h4>Author: </h4><li><%= book.author %></li>
+      <h4>ISBN: </h4><li><%= book.isbn %></li>
+    </div>
+    <% end %>
+    <h3><%= will_paginate @pages %></h3>
+  </body>
+</html>

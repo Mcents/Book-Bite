@@ -1,5 +1,5 @@
 body {
-
+text-align: center;
 }
 
 
@@ -31,14 +31,14 @@ h4 {
   opacity: 50%;
 }
 
-.ind-book {
+.book_holder {
   margin-top: 50px;
 }
-.ind-book li  {
+.book_holder li  {
   display: inline-block;
 }
 
-.ind-book img {
+.book_holder img {
   height: 150px;
   width: 100px;
 }
