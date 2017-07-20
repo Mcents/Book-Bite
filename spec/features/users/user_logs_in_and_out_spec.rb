@@ -15,7 +15,6 @@ feature "User logs in and out" do
     click_on "Login"
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_content("Welcome, #{user.username}")
     expect(page).to have_content("Successful login")
 
     click_on "Logout"
