@@ -1,20 +1,48 @@
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" type="text/css" href="starter-template.css"/>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <%@books.each do |book|%>
-    <div class="book_holder">
-      <p><a href="/books/<%= book.id %>"><%= image_tag("http://covers.openlibrary.org/b/isbn/#{book.isbn}-M.jpg")  %></a>
-      <h4>Title: </h4><li><%= book.title %></li>
-      <h4>Author: </h4><li><%= book.author %></li>
-      <h4>ISBN: </h4><li><%= book.isbn %></li>
-    </div>
-    <% end %>
-    <h3><%= will_paginate @pages %></h3>
-  </body>
-</html>
+<div class ="blur">
+</div>
+<head>
+  <link rel="stylesheet" type="text/css" href="./assets/book-index.css"/>
+    <div id="demo"></head>
+  <span><h1>Books</h1>
+
+
+  <!-- Responsive table starts here -->
+  <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+  <div class="table-responsive-vertical shadow-z-1">
+  <!-- Table starts here -->
+  <table id="table" class="table table-hover table-mc-light-blue">
+      <thead>
+        <tr>
+          <th>Jacket</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Available</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @books.each do |book| %>
+        <tr>
+          <td data-title="Jacket"> <a href="/books/<%= book.id %>"><%= image_tag("http://covers.openlibrary.org/b/isbn/#{book.isbn}-M.jpg")  %></a></td>
+          <td data-title="Title"> <%= book.title %></td>
+          <td data-title="Author"> <%= book.author %></a>
+          </td>
+          <td data-title="Status"> <%= book.borrowed %></td>
+          <% end %>
+        </tr>
+        <tr>
+
+        </tr>
+      </tbody>
+    </table>
+  </div></span>
+
+  <!-- Table Constructor change table classes, you don't need it in your project -->
+  <div style="width: 45%; display: inline-block; vertical-align: top">
+
+  </p>
+  </div>
+  <div style="width: 45%; display: inline-block; vertical-align: top; margin-left: 30px;">
+
+  </div>
+</div>

@@ -46,6 +46,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'shoulda-matchers'
   gem 'pry-rails'
+  gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 end
 
 group :development do
