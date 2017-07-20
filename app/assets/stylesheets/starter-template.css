@@ -1,0 +1,40 @@
+body {
+  text-align: center;
+
+}
+.starter-template {
+  text-align: center;
+}
+
+
+p {
+  display: inline-block;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 5px;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+h4 {
+  color: #15048E;
+  font-size: 20px;
+}
+
+.jumbotron {
+  /*padding-bottom: 300px;*/
+}
+
+.alert-info {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0%;
+  opacity: 50%;
+}
+
+li {
+  color: black;
+}

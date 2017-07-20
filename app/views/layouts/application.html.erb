@@ -9,13 +9,9 @@
   </head>
 
   <body>
-    <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :id => "flash_#{name}" %>
-   <% end %>
-    <% if current_user %>
-      Welcome, <%= current_user.username %>
-      <%= link_to "Logout", logout_path, method: :delete %>
-    <% end %>
+    <div class="alert alert-info alert-dismissible fade show">
+      <%= flash[:notice]  %>
+ </div>
     <%= yield %>
   </body>
 </html>
