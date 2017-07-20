@@ -1,10 +1,7 @@
 body {
-  text-align: center;
 
 }
-.starter-template {
-  text-align: center;
-}
+
 
 
 p {
@@ -24,7 +21,6 @@ h4 {
 }
 
 .jumbotron {
-  /*padding-bottom: 300px;*/
 }
 
 .alert-info {
@@ -35,6 +31,14 @@ h4 {
   opacity: 50%;
 }
 
-li {
-  color: black;
+.ind-book {
+  margin-top: 50px;
+}
+.ind-book li  {
+  display: inline-block;
+}
+
+.ind-book img {
+  height: 150px;
+  width: 100px;
 }

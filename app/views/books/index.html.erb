@@ -1,4 +1,12 @@
-<% @books.each do |book| %>
-<%= book.title %>
-<%= image_tag("http://covers.openlibrary.org/b/isbn/#{book.isbn}-M.jpg") %>
-<% end %>
+
+<link href="starter-template" rel="stylesheet">
+<div class="ind-book">
+  <% @books.each do |book| %>
+  <ul>
+  <li><%= image_tag("http://covers.openlibrary.org/b/isbn/#{book.isbn}-M.jpg") %></li>
+  <li><%= book.title %></li>
+  <li><%= book.author %></li>
+  <li><%= book.isbn %></li>
+</ul>
+  <% end %>
+</div>

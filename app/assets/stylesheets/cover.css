@@ -58,6 +58,7 @@ body {
 /* Padding for spacing */
 .inner {
   padding: 30px;
+    font-size: 50px;
 }
 
 .blur {
@@ -102,11 +103,6 @@ span {
   margin-bottom: 10px;
 }
 
-.navbar-nav {
-  position: center;
-  font-size: 22px;
-  padding-left: 80px;
-}
 
 
 @media (min-width: 768px) {
@@ -141,6 +137,14 @@ span {
   color: rgba(255,255,255,.5);
 }
 
+p {
+  font-size: 50px;
+}
+
+.ind_book  {
+  display: inline-block;
+
+}
 
 /*
  * Affix and center
