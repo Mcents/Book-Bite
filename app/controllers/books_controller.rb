@@ -25,11 +25,9 @@ class BooksController < ApplicationController
   end
 
   def send_to
-    # @user = current_user
-    # notifier = Slack::Notifier.new "https://hooks.slack.com/services/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"
-    # notifier.ping at-kevin.mugele "Someone wants to borrow your book"
+    @user = current_user
     client = SlackNotify::Client.new(webhook_url: "https://hooks.slack.com/services/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", username: "book-borrow-bot")
-    client.notify("Someone wants to borrow your book", "@kevin.mugele")
+    client.notify("Someone wants to borrow your book", "@#{@user.username}")
   end
 
   def edit
