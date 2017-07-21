@@ -1,6 +1,4 @@
-# README
-
-Turing Book Share App!
+# Book Bite
 
 Add and borrow books with your community:
 
