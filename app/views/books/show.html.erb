@@ -22,18 +22,24 @@
             <% if @book.borrowed == true %>
               <h6>**This book is currently being borrowed**</h6>
               <% end %>
+
               <% if @book.borrowed == false %>
                 <h7><%= form_for @book do |t| %>
                    <%= t.hidden_field :borrowed, :value=> true %>
                    <%= t.submit "Borrow Book" %>
-                 <% end %></h7>
-               </h7><%= button_to "Send notification to Owner", { :controller => "books", :action => "send_to"} %>
-              <% end %></h7>
+                   </h7><%= button_to "Send notification to Owner", { :controller => "books", :action => "send_to"} %>
+                   <% end %>
+                   <% end %>
 
-              <% if current_user == @book.user %>
-                <h4> <%= link_to "Edit", edit_book_path(@book) %></h4>
-                <h4> <%= link_to "Delete", book_path(@book), method: :delete %></h4>
-              <% end %></div>
+
+
+
+                <h4> <%= link_to_if(current_user == @book.user, "Edit", edit_book_path(@book)) %></h4>
+                <h4> <%= link_to_if(current_user == @book.user, "Delete", book_path(@book), method: :delete) %></h4>
+</div>
+
+
+            </div>
      <div class="transparent-background">
      </div>
 </div>

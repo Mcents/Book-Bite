@@ -27,8 +27,13 @@
       z-index: 1;
       position: fixed; /* needed to enable the z-index */
       font-size: 25px;
+      padding-top: 30px;
       text-align: center;
-      padding-top: 10px;
+
+ }
+
+ .my-cool-wrapper .text-and-images-on-top h5,h6 {
+      margin: 30px;
 
  }
 
@@ -36,6 +41,15 @@
        float:left;
        padding-left: 20px;
        padding-right: 20px;
+  }
+
+
+  .book-false {
+    padding-left: 50px;
+    padding-top: 200px;
+    position: fixed;
+    bottom: 10px;
+    text-align: center;
   }
 
  .my-cool-wrapper .text-and-images-on-top h5, h6 {
