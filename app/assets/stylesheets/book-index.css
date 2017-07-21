@@ -43,6 +43,14 @@ body {
 
 .footer {
   bottom: 0;
+  text-align: center;
+  color: white;
+}
+.footer a{
+  bottom: 0;
+  text-align: center;
+  color: white;
+  text-decoration: none;
 }
 
 .blur {

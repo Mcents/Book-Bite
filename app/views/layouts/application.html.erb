@@ -11,6 +11,13 @@
     <div class="alert alert-info alert-dismissible fade show">
       <%= flash[:notice]  %>
  </div>
+
+ </div>
     <%= yield %>
   </body>
+  <div class="footer">
+  <span><% if current_user %>
+    <%= current_user.username %>
+    <%= link_to "Logout", logout_path, method: :delete %></span>
+  <% end %>
 </html>

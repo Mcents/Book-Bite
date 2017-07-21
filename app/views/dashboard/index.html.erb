@@ -19,13 +19,3 @@
               <% end %>
           </div></span>
         </body>
-
-
-
-
-<div class="footer">
-<span><% if current_user %>
-  <%= current_user.username %>
-  <%= link_to "Logout", logout_path, method: :delete %></span>
-<% end %>
-</div>
