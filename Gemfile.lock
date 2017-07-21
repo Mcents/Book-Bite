@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/twbs/bootstrap-rubygem
-  revision: b156edfee2b9629ad4751ee2a118a04f824ef9eb
+  revision: bd3d58a56c46d1f87785298706b136b73c192b8b
   specs:
     bootstrap (4.0.0.alpha6)
       autoprefixer-rails (>= 6.0.3)
