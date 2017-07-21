@@ -27,9 +27,10 @@
                 <h7><%= form_for @book do |t| %>
                    <%= t.hidden_field :borrowed, :value=> true %>
                    <%= t.submit "Borrow Book" %>
+                   <% end %>
                    </h7><%= button_to "Send notification to Owner", { :controller => "books", :action => "send_to"} %>
                    <% end %>
-                   <% end %>
+                   
 
 
 
