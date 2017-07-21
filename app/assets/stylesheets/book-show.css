@@ -23,24 +23,39 @@
       margin-top: 50px;
  }
  .my-cool-wrapper .text-and-images-on-top {
-      padding: 10px 15px 19px 15px;
+      padding-left: 250px;
       z-index: 1;
-      position: relative; /* needed to enable the z-index */
-      font-size: 30px;
+      position: fixed; /* needed to enable the z-index */
+      font-size: 25px;
+      text-align: center;
+      padding-top: 10px;
+
  }
 
  .my-cool-wrapper img {
        float:left;
-       padding-right: 100px;
+       padding-left: 20px;
+       padding-right: 20px;
   }
 
  .my-cool-wrapper .text-and-images-on-top h5, h6 {
  }
 
+ .my-right-wrapper {
+       position: relative;
+       margin-left: 20px;
+       margin-top: 50px;
+  }
+
+  .my-right-wrapper img {
+        height:90px;
+        width:60px;
+   }
+
  .my-cool-wrapper .transparent-background {
-      position: absolute;
-      top: 0;
-      width: 70%;
+      position: fixed;
+      top: 105px;;
+      width: 50%;
       height: 100%;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";       /* IE 8 */
       filter: alpha(opacity=10);  /* IE 5-7 */
@@ -49,6 +64,38 @@
       opacity: 0.3;               /* Good browsers */
       background-color: #DEDEE4;
  }
+
+ .my-right-wrapper .text-and-images {
+      z-index: 1;
+      position: relative; /* needed to enable the z-index */
+      font-size: 15px;
+      float: right;
+      padding-right: 200px;
+      text-align: center;
+      display: inline-block;
+ }
+
+ .my-right-wrapper h2 {
+   font-size: 30px;
+ }
+
+
+ .my-right-wrapper .transparent-background {
+      position: fixed;
+      display: block;
+      right: 0;
+      top: 105px;
+      width: 30%;
+      height: 100%;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";       /* IE 8 */
+      filter: alpha(opacity=10);  /* IE 5-7 */
+      -moz-opacity: 0.1;          /* Netscape */
+      -khtml-opacity: 0.1;        /* Safari 1.x */
+      opacity: 0.3;               /* Good browsers */
+      background-color: #DEDEE4;
+      margin-right: 80px;
+ }
+
 
 
 body {
@@ -59,9 +106,6 @@ body {
   margin-left: 0px;
 }
 
-img {
-  padding-left: 100px;
-}
 
 span {
     position: relative;
@@ -91,10 +135,12 @@ span {
 }
 
 
+
 .footer {
-  bottom: 0;
+  bottom: 5px;
   text-align: center;
   color: white;
+  position: fixed;
 }
 .footer a{
   bottom: 0;

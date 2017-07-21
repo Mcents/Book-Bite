@@ -13,32 +13,43 @@
 
 </head>
 <span>
-
+<div class="container" >
   <div class="my-cool-wrapper">
      <div class="text-and-images-on-top">
-          <p><%= image_tag("http://covers.openlibrary.org/b/isbn/#{@book.isbn}-M.jpg") %>
+          <%= image_tag("http://covers.openlibrary.org/b/isbn/#{@book.isbn}-M.jpg") %>
             <h6>Title: </h6><h5><%= @book.title %></h5>
             <h6>Author: </h6><h5><%= @book.author  %></h5>
-          <%= @book.description %>
-     </div>
+            <% if @book.borrowed == true %>
+              <h6>**This book is currently being borrowed**</h6>
+              <% end %>
+              <% if @book.borrowed == false %>
+                <h7><%= form_for @book do |t| %>
+                   <%= t.hidden_field :borrowed, :value=> true %>
+                   <%= t.submit "Borrow Book" %>
+                 <% end %></h7>
+               </h7><%= button_to "Send notification to Owner", { :controller => "books", :action => "send_to"} %>
+              <% end %></h7>
+
+              <% if current_user == @book.user %>
+                <h4> <%= link_to "Edit", edit_book_path(@book) %></h4>
+                <h4> <%= link_to "Delete", book_path(@book), method: :delete %></h4>
+              <% end %></div>
      <div class="transparent-background">
      </div>
 </div>
 
-<% if @book.borrowed == false %>
-  <%= form_for @book do |t| %>
-     <%= t.hidden_field :borrowed, :value=> true %>
-     <%= t.submit "Borrow Book" %>
-    <%= flash[:notice] %>
-   <% end %>
-   <%= button_to "Send notification to Owner", { :controller => "books", :action => "send_to"} %>
-<% end %>
 
-<% if @book.borrowed == true %>
-  <h3>This book is currently being borrowed</h3>
-  <% end %>
 
-<% if current_user == @book.user %>
-  <h4> <%= link_to "Edit", edit_book_path(@book) %></h4>
-  <h4> <%= link_to "Delete", book_path(@book), method: :delete %></h4>
-<% end %><span>
+<div class="my-right-wrapper">
+   <div class="text-and-images">
+      <h2>Similar Books</h2>
+      <% @book.category.books.each do |book| %>
+        <p><%= image_tag("http://covers.openlibrary.org/b/isbn/#{book.isbn}-M.jpg") %>
+          <h5><%= book.title %></h5>
+          <h5><%= book.author  %></h5>
+        <% end %>
+   </div>
+   <div class="transparent-background">
+   </div>
+</div>
+</div>
