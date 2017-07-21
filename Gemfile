@@ -32,6 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '~> 3.1.1'
 gem "slack-notifier"
 gem 'slack-notify'
+gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
