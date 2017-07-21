@@ -19,6 +19,5 @@ RSpec.feature "User can create a book" do
     expect(current_path).to eq(book_path(l_book))
     expect(page).to have_content(l_book.title)
     expect(page).to have_content(l_book.author)
-    expect(page).to have_content(l_book.isbn)
   end
 end

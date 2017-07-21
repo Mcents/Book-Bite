@@ -19,7 +19,6 @@ feature "User logs in and out" do
     visit root_path
 
     click_on "Logout"
-    save_and_open_page
     expect(current_path).to eq(root_path)
     expect(page).to_not have_content("{user.username}")
   end
