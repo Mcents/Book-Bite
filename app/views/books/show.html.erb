@@ -30,7 +30,7 @@
                    <% end %>
                    </h7><%= button_to "Send notification to Owner", { :controller => "books", :action => "send_to"} %>
                    <% end %>
-                   
+
 
 
 
@@ -51,7 +51,7 @@
    <div class="text-and-images">
       <h2>Similar Books</h2>
       <% @book.category.books.each do |book| %>
-        <p><%= image_tag("http://covers.openlibrary.org/b/isbn/#{book.isbn}-M.jpg") %>
+        <p><a href="/books/<%= book.id %>"><%= image_tag("http://covers.openlibrary.org/b/isbn/#{book.isbn}-M.jpg") %></a>
           <h5><%= book.title %></h5>
           <h5><%= book.author  %></h5>
         <% end %>
