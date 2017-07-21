@@ -1,10 +1,29 @@
+<div class ="blurry">
+</div>
 
+<head>
+<link rel="stylesheet" type="text/css" href="../assets/book-show.css"/>
 
-<%= image_tag("http://covers.openlibrary.org/b/isbn/#{@book.isbn}-M.jpg") %>
-  <%= @book.title %>
-  <%= @book.author  %>
-  <%= @book.description %>
-  <%= @book.user.first_name %>
+<span><nav>
+  <div class="navbar-show">
+<a href="/books/new">Add Book</a>
+<a href="/categories/new">Add Category</a>
+<a href="/books">Books</a>
+</div><span>
+
+</head>
+<span>
+
+  <div class="my-cool-wrapper">
+     <div class="text-and-images-on-top">
+          <p><%= image_tag("http://covers.openlibrary.org/b/isbn/#{@book.isbn}-M.jpg") %>
+            <h6>Title: </h6><h5><%= @book.title %></h5>
+            <h6>Author: </h6><h5><%= @book.author  %></h5>
+          <%= @book.description %>
+     </div>
+     <div class="transparent-background">
+     </div>
+</div>
 
 <% if @book.borrowed == false %>
   <%= form_for @book do |t| %>
@@ -22,4 +41,4 @@
 <% if current_user == @book.user %>
   <h4> <%= link_to "Edit", edit_book_path(@book) %></h4>
   <h4> <%= link_to "Delete", book_path(@book), method: :delete %></h4>
-<% end %>
+<% end %><span>
