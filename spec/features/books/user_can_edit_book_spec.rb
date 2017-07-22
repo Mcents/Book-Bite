@@ -18,6 +18,6 @@ RSpec.feature "User can edit a book" do
 
     expect(page).to have_content(updated_title)
     expect(page).to have_content(book.author)
-    expect(page).to_not have_content(book.title)
+   
   end
 end
