@@ -10,7 +10,6 @@ RSpec.feature "User can see index of all books" do
  
     
     visit books_path
-    save_and_open_page
     expect(page).to have_content(book.title)
     expect(page).to have_content(book.author)
   end
