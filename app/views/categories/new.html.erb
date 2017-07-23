@@ -1,3 +1,10 @@
+<link rel="stylesheet" type="text/css" href="../assets/login.css"/>
+
+<div class="logo"></div>
+<div class="login-block">
+      <h1>Add a Category</h1> 
+
+
 <%= form_for(@category, url: categories_path) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>

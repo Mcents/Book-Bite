@@ -1,3 +1,9 @@
+<link rel="stylesheet" type="text/css" href="../assets/login.css"/>
+
+<div class="logo"></div>
+<div class="login-block">
+      <h1>Add a Book</h1> 
+
 <%= form_for(:book, url: books_path) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>

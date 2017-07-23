@@ -21,7 +21,13 @@
             <h6>Author: </h6><h5><%= @book.author  %></h5>
             <% if @book.borrowed == true %>
               <h6>**This book is currently being borrowed**</h6>
-              <% end %>
+            <% end %>
+            <% if @book.borrowed == true & current_user %> 
+              <h7><%= form_for @book do |t| %></h7>
+                   <%= t.hidden_field :borrowed, :value=> false  %>
+                   <%= t.submit "Return Book" %>
+                 <% end %>
+               <% end %>
 
               <% if @book.borrowed == false %>
                 <h7><%= form_for @book do |t| %>
