@@ -1,4 +1,8 @@
+<link rel="stylesheet" type="text/css" href="../assets/cat-show"/>
+<div class="blurry">
+</div>
+<span>
 <% @categories.each do |cat| %>
-<h2><%= link_to cat.title, category_path(cat) %></h2>
-<%= link_to "Delete", category_path(cat), method: :delete  %>
-<% end %>
+<h2><%= cat.title %></h2>
+
+<% end %></span>

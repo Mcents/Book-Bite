@@ -15,11 +15,11 @@
 
  </div>
     <%= yield %>
-  </body>
+  </body><span>
   <div class="footer">
     <%= link_to "Back to books", books_path %></span>
   <span><% if current_user %>
     <%= current_user.username %>   
     <%= link_to "Logout", logout_path, method: :delete %>
-<% end %>
+  <% end %></span>
 </html>
