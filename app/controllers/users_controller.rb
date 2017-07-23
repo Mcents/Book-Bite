@@ -7,8 +7,11 @@ skip_before_action :require_login, :only => [:new, :create]
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Welcome, #{@user.username}"
-    end
     redirect_to root_path
+    else
+      flash[:notice] = "Invalid Credentials"
+      redirect_to new_user_path
+    end
   end
 
   private
