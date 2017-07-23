@@ -22,7 +22,7 @@
             <% if @book.borrowed == true %>
               <h6>**This book is currently being borrowed**</h6>
             <% end %>
-            <% if @book.borrowed == true & current_user %> 
+            <% if @book.borrowed == true && current_user == @book.user %> 
               <h7><%= form_for @book do |t| %></h7>
                    <%= t.hidden_field :borrowed, :value=> false  %>
                    <%= t.submit "Return Book" %>
