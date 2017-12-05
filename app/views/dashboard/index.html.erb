@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <head>
-<link rel="stylesheet" type="text/css" href="./assets/starter-template.css"/>
+  <link rel="stylesheet" type="text/css" href="./assets/starter-template.css"/>
 </head>
 
-  <body>
-    <div class="blur">
-      </div>
+<body>
+  <div class="blur">
+  </div>
 
-          <span>
-            <div class="header">
-            <h1>Book Bite</h1>
-            <h2>Books are super neat right? Now with Book Share, you can use all that free time to read! Just sign-up and start searching for avialable books!</h2>
-              <% unless current_user %>
-              <a href="/users/new" class="btn btn-lg btn-default">Signup</a>
-              <% end %>
-              <% unless current_user %>
-              <a href="/login" class="btn btn-lg btn-default">Login</a>
-              <% end %>
-          </div></span>
-        </body>
+  <span>
+    <div class="header">
+      <h1>Book Bite</h1>
+      <h2>Books are super neat right? Now with Book Share, you can use all that free time to read! Just sign-up and start searching for avialable books!</h2>
+      <% unless current_user %>
+        <a href="/users/new" class="btn btn-lg btn-default">Signup</a>
+      <% end %>
+      <% unless current_user %>
+        <a href="/login" class="btn btn-lg btn-default">Login</a>
+      <% end %>
+    </div></span>
+</body>

@@ -2,15 +2,24 @@ body {
 text-align: center;
 }
 
-.header {
+.header a {
   text-align: center;
+  font-size: 25px;
+  margin-left: 20px;
+  color: white;
 }
 
 .header h1 {
   margin-top: 250px;
   font-weight: bold;
-  font-size: 60px;
+  font-size: 100px;
   color: white;
+}
+
+.header h2 {
+  font-size: 35px;
+  padding-left: 300px;
+  padding-right: 300px;
 }
 
 .footer {
