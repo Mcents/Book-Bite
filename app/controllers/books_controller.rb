@@ -40,7 +40,6 @@ class BooksController < ApplicationController
     if @book.update_attributes(book_params)
       flash[:success] = "You updated #{@book.title}"
       flash[:notice] = "Contact this person"
-
       redirect_to @book
     else
       render :edit
