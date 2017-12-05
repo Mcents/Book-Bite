@@ -17,7 +17,9 @@
     <%= yield %>
   </body><span>
   <div class="footer">
+    <% if current_user %>
     <%= link_to "Back to books", books_path %></span>
+<% end %>
   <span><% if current_user %>
     <%= current_user.username %>   
     <%= link_to "Logout", logout_path, method: :delete %>
